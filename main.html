@@ -1,29 +1,19 @@
-<!DOCTYPE html><!-- このファイルはHTMLですという宣言 -->
-<html lang="ja"><!-- ここからHTMLが始まりますというタグ -->
+<!DOCTYPE HTML>
+<html lang="ja">
 
-<head><!-- ここから裏の設定ですよという宣言 -->
-  <meta charset="utf-8"><!-- 文字化け防止の記述 -->
-  <title>入力フォーム</title><!-- ページのタイトルを入れます -->
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 File API multiple upload</title>
 </head>
 
-<body><!-- ここからページに表示される内容ですよという宣言 -->
-  <form method="POST" action="message.php">
-    <input name="name" type="text">
-    <input type="submit" value="送信">
-  </form>
+<body>
 
-  <!-- ファイルアップロード画面 -->
-  <div class="property">
-    <p>
-      Input Multiple Files using Input Tag,
-      <b>'multiple property'</b>
-    </p>
-    <form action="main.html" method="post" enctype="multipart/form-data">
-      <label for="files">Select Multiple files:</label>
-      <input type="file" id="files" name="files" multiple required>
-      <button type="submit">送信する</button>
-    </form>
-  </div>
+  <h1>HTML5 File API</h1>
+
+  <form action="./upload.php" method="post" enctype="multipart/form-data">
+    Files:<input type="file" name="upfile[]" multiple>
+    <input type="submit" value="submit">
+  </form>
 
 </body>
 
