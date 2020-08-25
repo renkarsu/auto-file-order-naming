@@ -11,21 +11,26 @@
         }else{
 
             //ファイル名を取得
-            $fileinfo[i] = "upname[i]";
+            $fileinfo = "upname[i]";
     
             //ファイル名（拡張子を含まない）を取得 （使わなければ後で消す)
-            $filename[i] = pathinfo($pathinfo[i], PATHINFO_FILENAME);
+            $filename = pathinfo($pathinfo, PATHINFO_FILENAME);
             //拡張子（ドットを含まない）
-            $extension[i] = pathinfo($pathinfo[i], PATHINFO_EXTENSION);
+            $extension = pathinfo($pathinfo, PATHINFO_EXTENSION);
 
             //ファイル名を変更する 
-            rename($fileinfo[i] , $newname $i"."$extension)
+            if(rename($fileinfo , $newname $i"."$extension))
             {
                 echo "変更できました"
             }
             else{
                 echo"失敗しました"
             };
+            
+            //初期化
+            $fileinfo = NULL;
+            $filename = NULL;
+            $extension = NULL;
         }
     };
 
