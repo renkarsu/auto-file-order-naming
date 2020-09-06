@@ -1,3 +1,73 @@
+/*フォント設定*/
+body {
+  font-family: sans-serif;
+}
+/*ページ全体の背景色*/
+html {
+  background-color: #00539F;
+}
+/*本文のレイアウト設定*/
+body {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #FF9500;
+  padding: 0 10% 37.5% 10%;
+  border: 5px solid black;
+}
+/*h1タグは影をつけて青色にする*/
+h1 {
+  margin: 0;
+  padding: 20px 0;    
+  /*color: #00539F;*/
+}
+/*imgタグの付いた画像は中央に来るようにする*/
+img {
+  display: block;
+  margin: 0 auto;
+}
+/*headerの設定*/
+header {
+  /*position: fixed;*/
+  /*変化なし*/
+  /*left: 0;*/
+  top: 0;
+  width: 100%;
+  background-color: #00539F;
+  /*変化なし*/
+  color: #FF9500;
+  text-align: center;
+}
+/*footerの設定*/
+/*
+footer {
+  width: 100%;
+  height: 120px; 
+  text-align: center;
+  padding: 50px 0;
+  background-color: #cab64a;
+}
+*/
+/*
+<html>
+  <footer class="site-footer">
+    <p>©Copyright 2020 by denbutu. All rights reversed.</p>
+  </footer>
+<css>
+.site-footer {
+  color: white;
+  background: black;
+}
+*/
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+
 #drop_zone {
   border: 5px dashed #000000;
   padding: 50px;
