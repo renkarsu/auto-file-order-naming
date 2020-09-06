@@ -1,0 +1,28 @@
+/*フォント設定*/
+body {
+  font-family: sans-serif;
+}
+/*ページ全体の背景色*/
+html {
+  background-color: #00539F;
+}
+/*本文のレイアウト設定*/
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #FF9500;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+}
+/*h1タグは影をつけて青色にする*/
+h1 {
+  margin: 0;
+  padding: 20px 0;    
+  color: #00539F;
+  text-shadow: 3px 3px 1px black;
+}
+/*imgタグの付いた画像は中央に来るようにする*/
+img {
+  display: block;
+  margin: 0 auto;
+}
