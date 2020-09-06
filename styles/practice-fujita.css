@@ -26,6 +26,16 @@ img {
   display: block;
   margin: 0 auto;
 }
+/*headerの設定*/
+header {
+  /*position: fixed;*/
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
 /*footerの設定*/
 /*
 footer {
