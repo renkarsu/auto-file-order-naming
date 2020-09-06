@@ -4,19 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <title>HTML5 File API multiple upload</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
+  <header>
+    <h1>Auto-File-Order-Naming<br>(順序付きファイル名生成器)</h1>
+  </header>
 
-  <h1>HTML5 File API</h1>
+  <main>
+
+  <h3>目的</h3>
+  <P>　複数のファイルを, [指定したファイル名][指定した順番].[拡張子]というファイル名に置き換える.</P>
+  <p>　例) 3つの画像をアップロードし, pictureというファイル名で1から順に名前を付ける場合の出力</p>
+  <p style="text-align: right">(出力例) picture1.png, picture2.png, picture3.png</p>
+
+  <h3>ファイル名入力</h3>
 
 
-  
+  <h3>番号入力</h3>
+
+  <h3>ファイル選択</h3>
   <form action="./upload.php" method="post" enctype="multipart/form-data">
     Files:<input type="file" name="upfile[]" multiple>
     <input type="submit" value="submit">
   </form>
+  </main>
+
+  <footer>
+    <p>©Copyright 2020 by denbutu. All rights reversed.</p>
+  </footer>
 
   <script type="text/javascript" src="upload.js"></script>
   <script type="text/javascript" src="upload.php"></script>
