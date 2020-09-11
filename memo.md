@@ -19,3 +19,9 @@ IPアドレスはMACアドレスと異なり可変であり, 使われなくな�
 * tips
 1. SEO対策のLightHouse
 2. レスポンスspeed測るサイト
+
+* cssのフレックスなサイト
+1. https://qiita.com/hashrock/items/939684b9207dbab1d59e
+
+* クリーンでハックのないcss
+1. http://hashrock.github.io/solved-by-flexbox-ja/demos/input-add-ons/

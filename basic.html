@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
-
+<!--
+  グリッドレイアウトにした方が良いかも
+  1. https://ics.media/entry/15921/
+  pure cssのための話
+  2. https://qiita.com/hashrock/items/5c18bf5086f52e4122e5
+  3. https://qiita.com/hashrock/items/939684b9207dbab1d59e#3%E8%A1%8C%E3%81%A7%E8%AA%AC%E6%98%8Eflexbox%E3%81%A8%E3%81%AF
+-->
 <head lang="en">
   <meta charset="UTF-8">
   <title>sticky footer</title>
@@ -59,10 +65,32 @@
 </head>
 
 <body>
+  <!--縦に対するflex, スティッキーフッタ
+    containerクラスをflexに指定
+    要素を縦に並べたいので、親にflex-direction : columnを指定
+    親要素は常に縦幅が画面サイズ以上になるようにする。min-height: 100vhを指定
+    そのcontainerクラスにheader, wrapper, footerを入れ子にする
+  -->
   <div class="container">
     <div class="header">
       <h1>吾輩のホームページ</h1>
     </div>
+    <!--横に対するflex, 3カラムレイアウト
+      wrapperクラスをflexにして, その中に複数クラスを入れる.すると, その中に
+      フレックスなクラスと幅固定のクラスが存在するようにできる.
+      <具体的には>
+      wrapperクラス自体をflex:1のように設定することで全体を可変にできる.
+      フレックスなクラスをflex:1
+      幅固定のクラスをwidth:300px
+      </>
+      <補足>
+      containerクラスでdisplay:flexにしているので, wrapperクラスではflex:1
+      も指定する.
+      </>
+      例えば, 左側にサイドバー, 真ん中にコンテンツ, 右側に関連リンクとする.
+      このとき, 全体をwrapperクラスにする.
+      真ん中だけを可変にするとすると, 上記の<具体的には>のように実装
+     -->
     <div class="wrapper">
       <div class="left">
         <ul>
