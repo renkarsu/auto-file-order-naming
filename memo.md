@@ -15,3 +15,7 @@ IPアドレスはMACアドレスと異なり可変であり, 使われなくな�
 
 * webサイトのソースコードとチュートリアル
 1. https://nightfury-alfa.com/pages/codingsnow/codingsnow.php
+
+* tips
+1. SEO対策のLightHouse
+2. レスポンスspeed測るサイト
