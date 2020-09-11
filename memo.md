@@ -12,3 +12,6 @@ IPアドレスはMACアドレスと異なり可変であり, 使われなくな�
 * サイドバーやドロップダウンの参考サイト
 1. https://www.youtube.com/watch?v=V0O4pY2xX10&t=55s
 上記1.の動画の概要欄のサイトにて検索窓に[Sidebar Menu using HTML & CSS]のような検索ワードを打つと良い感じ
+
+* webサイトのソースコードとチュートリアル
+1. https://nightfury-alfa.com/pages/codingsnow/codingsnow.php
