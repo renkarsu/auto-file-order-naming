@@ -1,43 +1,46 @@
 //upload.jsを参考にしていないので後で見直す
 
 $(function(){
-    var file = null;
-    var blod = null;
+    let file = null;
+    let blod = null;
     //画像リサイズ後の縦横の長さの最大値
-    const THUMBNAIL_WIDTH = 500;
-    const THUMBNAIL_HEIGHT = 500;
+    //canvas領域の大きさによって決める。分割数は適当
+    const THUMBNAIL_WIDTH = canvas.Width / 5;
+    const THUMBNAIL_HEIGHT = canvas.height / 2;
 
     //ファイルが選択されたとき
-    $('input[type=file').change(function(){
+    $('input type=file').change(function(){
         file = $(this).prop('files')[0];
+
+        let image = new Image();
+        let reader = new FileReader();
 
         //選択されたファイルが画像かどうか判定
         if(file.type !='image/jpeg' && file.type !='image/ping'){
             //画像でない場合に既定の画像に置き換える
-            
+            image.src = "example.jpg";
         }
 
         //画像のリサイズ
-        var image = new Image();
-        var reader = new FileReader();
         reader.onload = function(e){
             image.onload = function(){
                 var width, height;
                 if(image.width > image.height){
                     var ratio = image.height/image.width;
-                    width = THUMBNAIL_WIDTH ;
+                    width = THUMBNAIL_WIDTH;
                     height = THUMBNAIL_WIDTH * ratio;
-                }else{
+                }else if(image.height > image.width){
                     var ratio = image.width/image.height;
-                    width = THUMBNAIL_HEIGHT * ratio;
                     height = THUMBNAIL_HEIGHT;
+                    width = THUMBNAIL_HEIGHT * ratio;
                 }
 
+                //HTML内にキャンバス領域を作る必要有 <canvas id="example" width="200" hight="200"></canvas>
                 var canvas = $('#canvas')
                              .attr('width',width)
                              .atter('height',height);
                 var ctx = canvas[0].getContext('2d');
-
+                    
                 ctx.clearRect(0,0,width,height);
                 ctx.drawImage(image,0,0,image.width,image.height,0,0,width,height);
 
