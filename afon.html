@@ -23,8 +23,9 @@
       <h2>セクション１. 入力フォーム</h2>
       <!-- 両方 -->
       <div class="InputAddOn">
+        <!--レイアウト崩れた...-->
         <span class="InputAddOn-item">ファイル</span>
-        <input class="InputAddOn-field">
+        <input type="file" name="upfile[]" multiple class="InputAddOn-field">
         <button class="InputAddOn-item">send</button>
       </div>
       <div class="InputAddOn">
@@ -41,6 +42,7 @@
     </section>
     <section class="section02">
       <h2>セクション2. ファイル</h2>
+      <canvas class="tile" id="layoutCanvas"></canvas>
       <div class="tile">
         <div>
           <h3>アイテムのタイトル</h3>
@@ -83,6 +85,7 @@
       <p style="text-align: center">©Copyright 2020 by denbutu. All rights reversed.</p>
     </footer>
   </div>
+  <script type="text/javascript" src="afon-upload.js"></script>
 </body>
 
 </html>

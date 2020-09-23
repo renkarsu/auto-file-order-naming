@@ -5,8 +5,11 @@ $(function(){
     let blod = null;
     //画像リサイズ後の縦横の長さの最大値
     //canvas領域の大きさによって決める。分割数は適当
-    const THUMBNAIL_WIDTH = canvas.Width / 5;
-    const THUMBNAIL_HEIGHT = canvas.height / 2;
+    const THUMBNAIL_WIDTH = $('#layoutCanvas').Width / 5;
+    const THUMBNAIL_HEIGHT = $('#layoutCanvas').height / 2;
+
+    $('.tile').display(none);
+    $('#layoutCanvas').display(block);
 
     //ファイルが選択されたとき
     $('input type=file').change(function(){
@@ -35,8 +38,7 @@ $(function(){
                     width = THUMBNAIL_HEIGHT * ratio;
                 }
 
-                //HTML内にキャンバス領域を作る必要有 <canvas id="example" width="200" hight="200"></canvas>
-                var canvas = $('#canvas')
+                var canvas = $('#layoutCanvas')
                              .attr('width',width)
                              .atter('height',height);
                 var ctx = canvas[0].getContext('2d');
@@ -86,6 +88,8 @@ $(function(){
         })
         .fail(function( jqXHR, textSratus, errorThrown){
             //送信失敗
+            $('#layoutCanvas').display(none);
+            $('.tile').display(grid);
         })
     })        
 });
