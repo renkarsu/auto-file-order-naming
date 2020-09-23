@@ -12,7 +12,7 @@ $(function(){
     $('#layoutCanvas').display(block);
 
     //ファイルが選択されたとき
-    $('input type=file').change(function(){
+    $('#FileStorage').change(function(){
         file = $(this).prop('files')[0];
 
         let image = new Image();
