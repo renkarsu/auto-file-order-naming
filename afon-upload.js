@@ -85,6 +85,7 @@ $(function(){
         })
         .done(function( data, textStatus, jqXHR){
             //送信成功
+            naming(upfile[i],InputAddOn-number);
         })
         .fail(function( jqXHR, textSratus, errorThrown){
             //送信失敗
