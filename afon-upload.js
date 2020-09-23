@@ -65,7 +65,7 @@ $(function(){
     });
 
     //アップロード開始ボタンが押されたら
-    $('#uplooad').click(function(){
+    $('#InputAddOn-upload').click(function(){
         
         //ファイルがない場合
         if(!file || !blob){
