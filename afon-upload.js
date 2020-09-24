@@ -8,11 +8,11 @@ $(function(){
     const THUMBNAIL_WIDTH = $('#layoutCanvas').Width / 5;
     const THUMBNAIL_HEIGHT = $('#layoutCanvas').height / 2;
 
-    $('.tile').display(none);
-    $('#layoutCanvas').display(block);
-
     //ファイルが選択されたとき
     $('#FileStorage').change(function(){
+        $('.tile').display(none);
+        $('#layoutCanvas').display(block);
+
         file = $(this).prop('files')[0];
 
         let image = new Image();
