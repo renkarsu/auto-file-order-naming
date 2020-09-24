@@ -1,9 +1,8 @@
 <?php
 
-    
 
         //50個までの想定
-        for($i='#InputAddOn-number',$i<50,$i++){
+        for($i=0,$i<100,$i++){
 
             //ファイルが無くなったら終了
             if(file_exists("upfile[i]")){
