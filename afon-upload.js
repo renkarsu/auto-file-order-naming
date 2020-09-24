@@ -76,7 +76,7 @@ $(function(){
         fd.append('file',blob);
 
         $.ajax({
-            url:"http://example.com", //送信先(サーバーへのアップロードでは無い？)
+            url:"http://localhost", //送信先
             type: 'POST',
             detaTpye: 'json',
             data: fd,
@@ -85,7 +85,6 @@ $(function(){
         })
         .done(function( data, textStatus, jqXHR){
             //送信成功
-            naming(upfile[i],InputAddOn-number);
         })
         .fail(function( jqXHR, textSratus, errorThrown){
             //送信失敗

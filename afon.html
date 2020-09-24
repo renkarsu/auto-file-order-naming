@@ -21,20 +21,22 @@
     <div class="hero">ヒーローエリア</div>
     <section class="section01">
       <h2>セクション１. 入力フォーム</h2>
-      <!-- 両方 -->
-      <div class="InputAddOn">
-        <span class="InputAddOn-item">ファイル</span>
-        <input type="file" name="upfile[]" multiple class="InputAddOn-field" id="FileStorage">
-      </div>
-      <div class="InputAddOn">
-        <span class="InputAddOn-item">ファイル名</span>
-        <input class="InputAddOn-field" id="NewName">
-      </div>
-      <div class="InputAddOn">
-        <span class="InputAddOn-item">番号</span>
-        <input class="InputAddOn-field" id="InputAddOn-number">
-        <button class="InputAddOn-item" id="InputAddOn-upload">send</button>
-      </div>
+      <form action="afon-upload.js" method="post" enctype="multipart/form-data">
+        <!-- 両方 -->
+        <div class="InputAddOn">
+          <span class="InputAddOn-item">ファイル</span>
+          <input type="file" name="upfile[]" multiple class="InputAddOn-field" id="FileStorage">
+        </div>
+        <div class="InputAddOn">
+          <span class="InputAddOn-item">ファイル名</span>
+          <input class="InputAddOn-field" id="NewName">
+        </div>
+        <div class="InputAddOn">
+          <span class="InputAddOn-item">番号</span>
+          <input class="InputAddOn-field" id="InputAddOn-number">
+          <button class="InputAddOn-item" id="InputAddOn-upload">send</button>
+        </div>
+      </form>
       ファイルとファイル名, 何番から番号を付けるか設定してください
     </section>
     <section class="section02">
@@ -82,7 +84,7 @@
       <p style="text-align: center">©Copyright 2020 by denbutu. All rights reversed.</p>
     </footer>
   </div>
-  <script type="text/javascript" src="afon-upload.js"></script>
+  <!--<script type="text/javascript" src="afon-upload.js"></script>-->
   <script type="text/javascript" scr="naming.php"></script>
 </body>
 

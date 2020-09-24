@@ -1,6 +1,6 @@
 <?php
 
-    function naming(upfile[i],InputAddOn-number){
+    
 
         //50個までの想定
         for($i='#InputAddOn-number',$i<50,$i++){
@@ -34,7 +34,7 @@
                 $extension = NULL;
             }
         };
-    }
+
     
 
 ?>
