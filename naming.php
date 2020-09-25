@@ -32,7 +32,7 @@
                 $filename = NULL;
                 $extension = NULL;
             }
-        };
+        }
 
     
 

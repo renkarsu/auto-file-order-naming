@@ -1,7 +1,7 @@
 // <input type="file" name="upfile[]" multiple class="InputAddOn-field" id="FileStorage">にchangeイベントを設定
 
 
-var FileStorage = document.getElementById("FileStorage");
+/*var FileStorage = document.getElementById("FileStorage");
 FileStorage.addEventListener( "change", function() {
 	// フォームで選択された全ファイルを取得
     var fileList = this.files ;
@@ -15,4 +15,8 @@ FileStorage.addEventListener( "change", function() {
 		// HTMLに書き出し (src属性にblob URLを指定)
 		$('#layout-tile').innerHTML += '<a href="' + blobUrl + '" FileStorage="_blank"><img src="' + blobUrl + '"></a>' ;
 	}
-} ) ;
+})*/
+
+$('#test-btn').click(function(){
+	alert("読み込みできました");
+})
