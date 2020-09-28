@@ -13,26 +13,27 @@ $('#FileStorage').change(function() {
 	for( var i=0,l=fileList; l>i; i++ ) {
 		var file = $(this).prop('files')[i] ;
 
+		//リサイズand画像表示
+		//なんかエラーでてる?
 		if (! file.type.match('image.*')) {
 			var img_src = "iamge.jpg";
 			$('#layout-tile').html(img_src);
 		}else{
-		  	// 画像表示
 			var width, height;
         	if(file.width > file.height){
         		var ratio = file.height/file.width;
             	width = THUMBNAIL_WIDTH;
-            	height = THUMBNAIL_WIDTH * ratio;
+				height = THUMBNAIL_WIDTH * ratio;
+				file.width(width);
+				file.height(height);
         	}else if(file.height > file.width){
             	var ratio = file.width/file.height;
             	height = THUMBNAIL_HEIGHT;
-            	width = THUMBNAIL_HEIGHT * ratio;
+				width = THUMBNAIL_HEIGHT * ratio;
+				file.width(width);
+				file.height(height);
 			}
-			file.width(width);
-			file.height(height);
-			var img_src = $('<img>').attr('src', file);
-			$('#layout-tile').html(img_src);
-			reader.readAsDataURL(file);
+			$('#layout-tile').append('<img src="' + file + '"></img>');
 		}
 
 		var fileName = file.name
