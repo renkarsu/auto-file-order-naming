@@ -14,37 +14,24 @@ $('#FileStorage').change(function() {
 		var file = $(this).prop('files')[i] ;
 
 		if (! file.type.match('image.*')) {
-			reader.onload = function() {
-				var width, height;
-        		if(image.width > image.height){
-        			var ratio = image.height/image.width;
-            		width = THUMBNAIL_WIDTH;
-            		height = THUMBNAIL_WIDTH * ratio;
-        		}else if(image.height > image.width){
-            		var ratio = image.width/image.height;
-            		height = THUMBNAIL_HEIGHT;
-            		width = THUMBNAIL_HEIGHT * ratio;
-        		}
-				var img_src = "iamge.jpg";
-				$('#layout-tile').html(img_src);
-		  	}
+			var img_src = "iamge.jpg";
+			$('#layout-tile').html(img_src);
 		}else{
 		  	// 画像表示
-		  	var reader = new FileReader();
-		  	reader.onload = function() {
-				var width, height;
-				if(image.width > image.height){
-					var ratio = image.height/image.width;
-					width = THUMBNAIL_WIDTH;
-					height = THUMBNAIL_WIDTH * ratio;
-				}else if(image.height > image.width){
-					var ratio = image.width/image.height;
-					height = THUMBNAIL_HEIGHT;
-					width = THUMBNAIL_HEIGHT * ratio;
-				}
-				var img_src = $('<img>').attr('src', reader.result);
-				$('#layout-tile').html(img_src);
-		  	}
+			var width, height;
+        	if(file.width > file.height){
+        		var ratio = file.height/file.width;
+            	width = THUMBNAIL_WIDTH;
+            	height = THUMBNAIL_WIDTH * ratio;
+        	}else if(file.height > file.width){
+            	var ratio = file.width/file.height;
+            	height = THUMBNAIL_HEIGHT;
+            	width = THUMBNAIL_HEIGHT * ratio;
+			}
+			file.width(width);
+			file.height(height);
+			var img_src = $('<img>').attr('src', file);
+			$('#layout-tile').html(img_src);
 			reader.readAsDataURL(file);
 		}
 
