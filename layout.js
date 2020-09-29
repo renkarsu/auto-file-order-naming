@@ -1,7 +1,7 @@
 // <input type="file" name="upfile[]" multiple class="InputAddOn-field" id="FileStorage">にchangeイベントを設定
 
-var THUMBNAIL_WIDTH = $('#layout-tile').Width / 5;
-var THUMBNAIL_HEIGHT = $('#layout-tile').height / 2;
+var THUMBNAIL_WIDTH = $(window).width() * (3 / 20);
+var THUMBNAIL_HEIGHT = $(window).height() / 5;
 
 //ファイル名の表示のみ可能。複数個は不可
 $('#FileStorage').change(function() {
@@ -13,27 +13,39 @@ $('#FileStorage').change(function() {
 	for( var i=0,l=fileList; l>i; i++ ) {
 		var file = $(this).prop('files')[i] ;
 
-		//リサイズand画像表示
-		//なんかエラーでてる?
+		//画像表示
 		if (! file.type.match('image.*')) {
 			var img_src = "iamge.jpg";
-			$('#layout-tile').html(img_src);
+			$('#layout-tile').append('<img src="' + img_src + '"></img>');
 		}else{
-			var width, height;
-        	if(file.width > file.height){
-        		var ratio = file.height/file.width;
-            	width = THUMBNAIL_WIDTH;
-				height = THUMBNAIL_WIDTH * ratio;
-				file.width(width);
-				file.height(height);
-        	}else if(file.height > file.width){
-            	var ratio = file.width/file.height;
-            	height = THUMBNAIL_HEIGHT;
-				width = THUMBNAIL_HEIGHT * ratio;
-				file.width(width);
-				file.height(height);
+
+			var reader = new FileReader();
+    		reader.onload = function() {
+				var img_src = $('<img>').attr('src', reader.result);
+				$('#layout-tile').html(img_src);
+				$('#layout-tile img').addClass('Thumbnail');
 			}
-			$('#layout-tile').append('<img src="' + file + '"></img>');
+			reader.readAsDataURL(file);
+		}
+
+		//リサイズ
+		//できてない
+		var width, height;
+		var Thumbnail = $('.Thumbnail');
+        if(Thumbnail.width > Thumbnail.height){
+    		var ratio = Thumbnail.height / Thumbnail.width;
+    		width = THUMBNAIL_WIDTH;
+			height = THUMBNAIL_WIDTH * ratio;
+			Thumbnail.width(width);
+			Thumbnail.height(height);
+			alert("iketa");
+     	}else if(Thumbnail.height > Thumbnail.width){
+        	var ratio = Thumbnail.width / Thumbnail.height;
+        	height = THUMBNAIL_HEIGHT;
+			width = THUMBNAIL_HEIGHT * ratio;
+			Thumbnail.width(width);
+			Thumbnail.height(height);
+			alert("iketa");
 		}
 
 		var fileName = file.name
