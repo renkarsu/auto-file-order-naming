@@ -15,7 +15,7 @@ $('#FileStorage').change(function() {
 
 		//画像表示
 		if (! file.type.match('image.*')) {
-			var img_src = "iamge.jpg";
+			var img_src = "image/fileImage.png.png";
 			$('#layout-tile').append('<img src="' + img_src + '"></img>');
 		}else{
 
@@ -23,30 +23,31 @@ $('#FileStorage').change(function() {
     		reader.onload = function() {
 				var img_src = $('<img>').attr('src', reader.result);
 				$('#layout-tile').html(img_src);
-				$('#layout-tile img').addClass('Thumbnail');
 			}
 			reader.readAsDataURL(file);
 		}
+		$('#layout-tile img').addClass('Thumbnail');
 
 		//リサイズ
 		//できてない
-		var width, height;
+		/*var width, height;
 		var Thumbnail = $('.Thumbnail');
-        if(Thumbnail.width > Thumbnail.height){
-    		var ratio = Thumbnail.height / Thumbnail.width;
+			console.log(Thumbnail.width());
+        if(Thumbnail.width() > Thumbnail.height()){
+    		var ratio = Thumbnail.height() / Thumbnail.width();
     		width = THUMBNAIL_WIDTH;
 			height = THUMBNAIL_WIDTH * ratio;
 			Thumbnail.width(width);
 			Thumbnail.height(height);
 			alert("iketa");
-     	}else if(Thumbnail.height > Thumbnail.width){
-        	var ratio = Thumbnail.width / Thumbnail.height;
+     	}else if(Thumbnail.height() > Thumbnail.width()){
+        	var ratio = Thumbnail.width() / Thumbnail.height();
         	height = THUMBNAIL_HEIGHT;
 			width = THUMBNAIL_HEIGHT * ratio;
 			Thumbnail.width(width);
 			Thumbnail.height(height);
 			alert("iketa");
-		}
+		}*/
 
 		var fileName = file.name
 		$('#layout-tile').append('<dev>' + fileName + '</div>') ;
