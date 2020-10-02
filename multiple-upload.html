@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./multiple-upload.css" />
+  <!-- https://cdnjs.com/libraries/dropzone -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
+</head>
+
+<body>
+
+  <h1>DropzoneJS File Upload Demo</h1>
+  <SECTION>
+    <DIV id="dropzone">
+      <FORM action="naming.php" method="post" enctype="multipart/form-data" class="dropzone needsclick" id="demo-upload">
+        <DIV class="dz-message needsclick">
+          Drop files here or click to upload.<BR>
+          <!--
+        <SPAN class="note needsclick">(This is just a demo dropzone. Selected
+          files are <STRONG>not</STRONG> actually uploaded.)</SPAN>
+          -->
+        </DIV>
+        <button class="InputAddOn-item" id="InputAddOn-upload">send</button>
+      </FORM>
+    </DIV>
+  </SECTION>
+
+  <br />
+  <hr size="3" noshade color="#F00000">
+
+
+  <script src="./multiple-upload.js"></script>
+
+</body>
+
+</html>
