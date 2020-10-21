@@ -2,7 +2,7 @@
 
 
         //100個までの想定
-        for($i=0;$i<100;$i++){
+        /*for($i=0;$i<100;$i++){
 
             //ファイルが無くなったら終了
             if(file_exists("upfile[i]")){
@@ -32,8 +32,11 @@
                 $filename = NULL;
                 $extension = NULL;
             }
-        }
-
+        }*/
     
+    print_r($_FILES['upfile']);
+    echo $_FILES['upfile[]']['name'];
+    echo $_FFILES['fileName'];
+    echo $_FFILES['filenamber'];
 
 ?>
