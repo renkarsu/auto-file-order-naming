@@ -104,7 +104,6 @@ body {
   column-gap: 10px;
 }
 
-
 .sidebar {
   grid-row: span 2;
 }
@@ -112,7 +111,7 @@ body {
 .footer {
   grid-column: 1 / 3;
 }
-/*ここから*/
+/*input-addon*/
 .InputAddOn {
   display: flex;
   margin-bottom: 1.5em;
@@ -148,5 +147,18 @@ body {
 .InputAddOn-item:last-child {
   border-radius: 0 2px 2px 0;
 }
+/*end*/
 
-/*ここまで*/
+/*file uploader*/
+label {
+  padding: 10px 40px;
+  background-color: rgba(147, 128, 108, 0.1);
+  color: #666666;
+  cursor: pointer;
+  
+}
+
+input[type="file"] {
+  display: none;
+}
+/*end*/

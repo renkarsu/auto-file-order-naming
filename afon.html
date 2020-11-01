@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <title>Auto-File-Order-Naming-順序付きファイル名生成ツール</title>
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" />
+  -->
   <link rel="stylesheet" href="styles/afon.css" />
 </head>
 
@@ -26,11 +29,17 @@
     <section class="section01">
       <h2>セクション１. 入力フォーム</h2>
       <form method="post" action="./naming.php" enctype="multipart/form-data">
+        <div class="InputAddOn">
+        <label>
+          <input type="file"  name="upfile[]" multiple>ファイルを選択
+        </label>
+        </div>
         <!-- 両方 -->
+        <!--
         <div class="InputAddOn">
           <span class="InputAddOn-item">ファイル</span>
           <input type="file" name="upfile[]" multiple class="InputAddOn-field" id="FileStorage">
-        </div>
+        </div>-->
         <div class="InputAddOn">
           <span class="InputAddOn-item">ファイル名</span>
           <input class="InputAddOn-field" name="fileName" id="NewName">
@@ -38,7 +47,12 @@
         <div class="InputAddOn">
           <span class="InputAddOn-item">番号</span>
           <input class="InputAddOn-field" name="filenamber" id="InputAddOn-number">
-          <button class="InputAddOn-item" id="InputAddOn-upload">send</button>
+        </div>
+        <div class="InputAddOn">
+          <input type="submit" class="InputAddOn-item">
+        </div>
+        <div class="InputAddOn">
+          <input type="reset" class="InputAddOn-item">
         </div>
       </form>
       ファイルとファイル名, 何番から番号を付けるか設定してください
@@ -88,7 +102,7 @@
     </footer>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="./Thumbnail.js"></script>
+  <script src="./Thumbnail.js"></script>
   <!--<script type="text/javascript" src="naming.php"></script>-->
 </body>
 
