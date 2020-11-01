@@ -25,3 +25,6 @@ IPアドレスはMACアドレスと異なり可変であり, 使われなくな�
 
 * クリーンでハックのないcss
 1. http://hashrock.github.io/solved-by-flexbox-ja/demos/input-add-ons/
+
+* type="text/javascript"とは？ <!DOCTYPE html>とは？　必須なのか？
+https://ja.stackoverflow.com/questions/35646/script-%E3%82%BF%E3%82%B0%E3%81%AE-type-text-javascript-%E3%81%AE%E6%9C%89%E7%84%A1%E3%81%AB%E3%82%88%E3%82%8B%E9%81%95%E3%81%84
