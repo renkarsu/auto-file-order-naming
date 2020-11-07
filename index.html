@@ -1,109 +1,39 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-  <meta charset="UTF-8" />
-  <title>Auto-File-Order-Naming-順序付きファイル名生成ツール</title>
-  <!--
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" />
-  -->
-  <link rel="stylesheet" href="styles/afon.css" />
+  <script type='text/javascript'>
+    var img;
+
+    function preview_image(elm) {
+      var reader = new FileReader();
+      reader.onload = function (event) {
+        img = event.target.result
+        document.getElementById("image_preview").src = img;
+      };
+      reader.readAsDataURL(elm.files[0]);
+    }
+
+    function download() {
+      var element = document.createElement('a');
+      element.setAttribute('href', img)
+      element.setAttribute('download', document.getElementById("cnno").value + '.png');
+
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
+  </script>
 </head>
 
 <body>
-  <div class="container">
-    <header class="header">
-      <h1>Team DenButu <span style="color:rgb(255, 208, 1)">Auto-File-Order-Naming(順序付きファイル名生成ツール)</span></h1>
 
-      <!--TEST用ボタン-->
-      <button id="test-btn">test</button>
+  Select File: <input type="file" accept="image/*" onchange="preview_image(this)"> <br>
+  Enter CN No. <input type="number" id="cnno" name="cnno"> <br>
+  <input id="sbt" type="submit" name="submit" value="Submit" accesskey="u" onclick="download()"><br>
 
-    </header>
-    <nav class="nav">
-      <a href="#">vtuber:○○ wiki</a>
-      <a href="#">menu02</a>
-      <a href="#">menu03</a>
-      <a href="#">menu04</a>
-    </nav>
-    <div class="hero">ヒーローエリア</div>
-    <section class="section01">
-      <h2>セクション１. 入力フォーム</h2>
-      <form method="post" action="./naming.php" enctype="multipart/form-data">
-        <div class="InputAddOn">
-          <label>
-            <input type="file" name="upfile[]" multiple>ファイルを選択
-          </label>
-        </div>
-        <!-- 両方 -->
-        <!--
-        <div class="InputAddOn">
-          <span class="InputAddOn-item">ファイル</span>
-          <input type="file" name="upfile[]" multiple class="InputAddOn-field" id="FileStorage">
-        </div>-->
-        <div class="InputAddOn">
-          <span class="InputAddOn-item">ファイル名</span>
-          <input class="InputAddOn-field" name="fileName" id="NewName">
-        </div>
-        <div class="InputAddOn">
-          <span class="InputAddOn-item">番号</span>
-          <input class="InputAddOn-field" name="filenamber" id="InputAddOn-number">
-        </div>
-        <div class="InputAddOn">
-          <input type="submit" class="InputAddOn-item">
-        </div>
-        <div class="InputAddOn">
-          <input type="reset" class="InputAddOn-item">
-        </div>
-      </form>
-      ファイルとファイル名, 何番から番号を付けるか設定してください
-    </section>
-    <section class="section02">
-      <h2>セクション2. ファイル</h2>
-      <div class="tile" id="layout-tile">
-        <div class="layoutCanvas">
-          <h3>アイテムのタイトル</h3>
-          <p>アイテムアイテムアイテムアイテム</p>
-        </div>
-        <div class="layoutCanvas">
-          <h3>アイテムのタイトル</h3>
-          <p>アイテムアイテムアイテムアイテム</p>
-        </div>
-        <div class="layoutCanvas">
-          <h3>アイテムのタイトル</h3>
-          <p>アイテムアイテムアイテムアイテム</p>
-        </div>
-        <div class="layoutCanvas">
-          <h3>アイテムのタイトル</h3>
-          <p>アイテムアイテムアイテムアイテム</p>
-        </div>
-        <div class="layoutCanvas">
-          <h3>アイテムのタイトル</h3>
-          <p>アイテムアイテムアイテムアイテム</p>
-        </div>
-        <div class="layoutCanvas">
-          <h3>アイテムのタイトル</h3>
-          <p>アイテムアイテムアイテムアイテム</p>
-        </div>
-        <div class="layoutCanvas">
-          <h3>アイテムのタイトル</h3>
-          <p>アイテムアイテムアイテムアイテム</p>
-        </div>
-        <div class="layoutCanvas">
-          <h3>アイテムのタイトル</h3>
-          <p>アイテムアイテムアイテムアイテム</p>
-        </div>
-      </div>
-    </section>
-    <aside class="sidebar">
-      サイドバー
-    </aside>
-    <footer class="footer">
-      <p style="text-align: center">©Copyright 2020 by denbutu. All rights reversed.</p>
-    </footer>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="./Thumbnail.js"></script>
-  <!--<script type="text/javascript" src="naming.php"></script>-->
+  <img id="image_preview" style="width: 400px" />
+
 </body>
 
 </html>
