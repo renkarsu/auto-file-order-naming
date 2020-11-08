@@ -1,4 +1,4 @@
-/*document.getElementById( "FileStorage" ).onChange = function () {
+podocument.getElementById( "FileStorage" ).onChange = function () {
 	$('.layoutCanvas').hide() ;
 	objectUrls = [] ;
 
@@ -19,7 +19,4 @@ function appendHTML ( html ) {
 }
 
 var objectUrls = [] ;
-*/
-document.getElementById("test-btn").click = function(){
-	alert('true');
-}
+
