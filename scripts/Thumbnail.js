@@ -19,3 +19,7 @@ function appendHTML ( html ) {
 }
 
 var objectUrls = [] ;
+
+$('#test-btn').click(function(){
+	alart('true');
+})

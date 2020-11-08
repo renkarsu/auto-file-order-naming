@@ -4,10 +4,23 @@
 <head>
   <meta charset="UTF-8" />
   <title>Auto-File-Order-Naming-順序付きファイル名生成ツール</title>
-  <!--
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css" />
-  -->
   <link rel="stylesheet" href="styles/afon.css" />
+
+  <script type='text/javascript'>
+    function download() {
+      var fileList = this.files ;
+	    for( var i=0,l=fileList.length; l>i; i++ ) {
+        var element = document.createElement('a');
+        element.setAttribute('href', img)
+        element.setAttribute('download', document.getElementById("NewName").value + document.getElementById("InputAddOn-number").value + '.png');
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -102,8 +115,7 @@
     </footer>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="./Thumbnail.js"></script>
-  <!--<script type="text/javascript" src="naming.php"></script>-->
+  <script type="text/javascript" src="scripts/Thumbnail.js"></script>
 </body>
 
 </html>
