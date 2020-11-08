@@ -162,3 +162,8 @@ input[type="file"] {
   display: none;
 }
 /*end*/
+
+/*サムネイル用
+.layoutCanvas{
+  display: block;
+}*/

@@ -1,11 +1,9 @@
 document.getElementById("FileStorage").onchange = function () {
 
 	// 要素を取得
-	let ele = document.getElementById('layoutCanvas');
-	// 現在の display プロパティの値を保持
-	const displayOriginal = ele.style.display;
+	let e = document.getElementById('layoutCanvas');
 	// none に設定して非表示
-	ele.style.display = 'none';
+	e.style.display = "none";
 
 	objectUrls = [];
 
