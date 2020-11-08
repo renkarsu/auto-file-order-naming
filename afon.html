@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <title>Auto-File-Order-Naming-順序付きファイル名生成ツール</title>
   <link rel="stylesheet" href="styles/afon.css" />
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="scripts/Thumbnail.js"></script>
 
   <script type='text/javascript'>
     function download() {
@@ -44,7 +46,7 @@
       <form method="post" action="./naming.php" enctype="multipart/form-data">
         <div class="InputAddOn">
         <label>
-          <input type="file"  name="upfile[]" multiple>ファイルを選択
+          <input type="file"  name="upfile[]" multiple id="FileStorage">ファイルを選択
         </label>
         </div>
         <!-- 両方 -->
@@ -114,8 +116,6 @@
       <p style="text-align: center">©Copyright 2020 by denbutu. All rights reversed.</p>
     </footer>
   </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="scripts/Thumbnail.js"></script>
 </body>
 
 </html>
