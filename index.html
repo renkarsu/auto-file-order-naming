@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <script type='text/javascript'>
+    var img;
+
+    function preview_image(elm) {
+      var reader = new FileReader();
+      reader.onload = function (event) {
+        img = event.target.result
+        document.getElementById("image_preview").src = img;
+      };
+      reader.readAsDataURL(elm.files[0]);
+    }
+
+    function download() {
+      var element = document.createElement('a');
+      element.setAttribute('href', img)
+      element.setAttribute('download', document.getElementById("cnno").value + '.png');
+
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
+  </script>
+</head>
+
+<body>
+
+  Select File: <input type="file" accept="image/*" onchange="preview_image(this)"> <br>
+  Enter CN No. <input type="number" id="cnno" name="cnno"> <br>
+  <input id="sbt" type="submit" name="submit" value="Submit" accesskey="u" onclick="download()"><br>
+
+  <img id="image_preview" style="width: 400px" />
+
+</body>
+
+</html>
