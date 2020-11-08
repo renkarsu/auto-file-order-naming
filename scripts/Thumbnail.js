@@ -1,4 +1,4 @@
-document.getElementById( "FileStorage" ).onchange = function () {
+document.getElementById( "FileStorage" ).onChange = function () {
 	$('.layoutCanvas').hide() ;
 	objectUrls = [] ;
 
