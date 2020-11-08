@@ -24,12 +24,16 @@
       <h2>セクション１. 入力フォーム</h2>
       <form method="post" enctype="multipart/form-data">
         <div class="InputAddOn">
-        <label>
-          <input type="file"  name="upfile[]" multiple id="FileStorage">ファイルを選択
-        </label>
+          <label>
+            <input type="file" name="upfile[]" multiple id="FileStorage">ファイルを選択
+          </label>
         </div>
         <div class="InputAddOn">
-          <span class="InputAddOn-item">番号</span>
+          <span class="InputAddOn-item">ファイル名</span>
+          <input class="InputAddOn-field">
+        </div>
+        <div class="InputAddOn">
+          <span class="InputAddOn-item">開始番号</span>
           <input class="InputAddOn-field">
         </div>
         <div class="InputAddOn">
