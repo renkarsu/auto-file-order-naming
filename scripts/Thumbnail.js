@@ -10,12 +10,17 @@ document.getElementById("FileStorage").onchange = function () {
 	var fileList = this.files;
 
 	for (var i = 0, l = fileList.length; l > i; i++) {
-		var objectUrl = URL.createObjectURL(fileList[i]);
-		var fileName = fileList[i].name;
 
-		appendHTML('<div><div>' + fileName + '<img src="' + objectUrl + '" width="100%"></div></div>');
-
-		objectUrls.push(objectUrl);
+		if(!fileList[i].type.match('image.*')) {
+			var fileName = fileList[i].name;
+			appendHTML('<div><div>' + fileName + '<img src=" images/fileImage.png " width="100%"></div></div>');
+			objectUrls.push(objectUrl);
+		}else{
+			var objectUrl = URL.createObjectURL(fileList[i]);
+			var fileName = fileList[i].name;
+			appendHTML('<div><div>' + fileName + '<img src="' + objectUrl + '" width="100%"></div></div>');
+			objectUrls.push(objectUrl);
+		}
 	}
 }
 
