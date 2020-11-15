@@ -23,27 +23,27 @@
     <section class="section01">
       <h2>セクション１. 入力フォーム</h2>
       ファイルとファイル名, 何番から番号を付けるか設定してください
-      <form method="post" enctype="multipart/form-data">
-        <div class="InputAddOn">
-          <label>
-            <input type="file" name="upfile[]" multiple id="FileStorage">ファイルを選択
-          </label>
-        </div>
-        <div class="InputAddOn">
-          <span class="InputAddOn-item">ファイル名</span>
-          <input class="InputAddOn-field" id="fileName" required>
-        </div>
-        <div class="InputAddOn">
-          <span class="InputAddOn-item">開始番号</span>
-          <input class="InputAddOn-field" id="fileNumber" required>
-        </div>
-        <div class="InputAddOn">
-          <input type="submit" class="InputAddOn-item" id="submit" accesskey="u" onclick="download()">
-        </div>
-        <div class="InputAddOn">
-          <input type="reset" class="InputAddOn-item">
-        </div>
-      </form>
+      <!--<form method="post" enctype="multipart/form-data">-->
+      <div class="InputAddOn">
+        <label>
+          <input type="file" name="upfile[]" multiple id="FileStorage">ファイルを選択
+        </label>
+      </div>
+      <div class="InputAddOn">
+        <span class="InputAddOn-item">ファイル名</span>
+        <input class="InputAddOn-field" id="fileName" required>
+      </div>
+      <div class="InputAddOn">
+        <span class="InputAddOn-item">開始番号</span>
+        <input pattern="(0|[1-9][0-9]*)" class="InputAddOn-field" id="fileNumber" required>
+      </div>
+      <div class="InputAddOn">
+        <input type="submit" class="InputAddOn-item" id="submit" accesskey="u" onclick="download()">
+      </div>
+      <div class="InputAddOn">
+        <input type="reset" class="InputAddOn-item">
+      </div>
+      <!--</form>-->
     </section>
     <section class="section02">
       <h2>セクション2. 画像プレビュー</h2>
