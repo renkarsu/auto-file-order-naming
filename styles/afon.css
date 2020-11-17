@@ -163,7 +163,16 @@ input[type="file"] {
 }
 /*end*/
 
-/*サムネイル用
-.layoutCanvas{
-  display: block;
-}*/
+/*draggTo.js*/
+[draggable] {
+  user-select: none;
+}
+
+#columns {
+  list-style-type: none;
+}
+
+.column {
+  cursor: move;
+}
+/*end*/

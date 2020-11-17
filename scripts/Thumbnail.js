@@ -11,14 +11,14 @@ document.getElementById("FileStorage").onchange = function () {
 
 	for (var i = 0, l = fileList.length; l > i; i++) {
 
-		if(!fileList[i].type.match('image.*')) {
+		if (!fileList[i].type.match('image.*')) {
 			var fileName = fileList[i].name;
-			appendHTML('<div><div>' + fileName + '<img src=" images/fileImage.png " width="100%"></div></div>');
+			appendHTML('<div class="column" draggable="true"><div>' + fileName + '<img src=" images/fileImage.png "  width="100%"></div></div>');
 			objectUrls.push(objectUrl);
-		}else{
+		} else {
 			var objectUrl = URL.createObjectURL(fileList[i]);
 			var fileName = fileList[i].name;
-			appendHTML('<div><div>' + fileName + '<img src="' + objectUrl + '" width="100%"></div></div>');
+			appendHTML('<div class="column" draggable="true"><div>' + fileName + '<img src="' + objectUrl + '" width="100%"></div></div>');
 			objectUrls.push(objectUrl);
 		}
 	}
@@ -29,4 +29,3 @@ function appendHTML(html) {
 }
 
 var objectUrls = [];
-

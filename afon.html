@@ -41,13 +41,14 @@
           <input type="submit" class="InputAddOn-item" id="submit" accesskey="u" onclick="download()">
         </div>
         <div class="InputAddOn">
-          <input type="reset" class="InputAddOn-item">
+          <input type="reset" class="InputAddOn-item" id="reset">
         </div>
+        <button type="button" id="move">順番を変更する</button>
       </form>
     </section>
     <section class="section02">
       <h2>セクション2. 画像プレビュー</h2>
-      <div class="tile" id="layout-tile">
+      <div class="tile" id="layout-tile" id="columns">
         <div id="layoutCanvas">
           <div>
             <h3>アイテムのタイトル</h3>
@@ -86,6 +87,8 @@
   </div>
   <script src="scripts/Thumbnail.js"></script>
   <script src="scripts/download-naming.js"></script>
+  <script src="scripts/draggToOrderChange.js"></script>
+  <script src="scripts/reset.js"></script>
 </body>
 
 </html>
