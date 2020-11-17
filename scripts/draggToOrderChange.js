@@ -54,6 +54,6 @@ function addDnDHandlers(elem) {
 }
 
 document.getElementById("move").onclick = function () {
-    var cols = document.querySelectorAll('#columns .column');
+    var cols = document.querySelectorAll('#layout-tile .column');
     [].forEach.call(cols, addDnDHandlers);
 }

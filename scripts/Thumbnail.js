@@ -11,16 +11,27 @@ document.getElementById("FileStorage").onchange = function () {
 
 	for (var i = 0, l = fileList.length; l > i; i++) {
 
+		//透明な要素を重ねる
 		if (!fileList[i].type.match('image.*')) {
 			var fileName = fileList[i].name;
-			appendHTML('<div class="column" draggable="true"><div>' + fileName + '<img src=" images/fileImage.png "  width="100%"></div></div>');
+			appendHTML('<div class="column" id="fileBody' + i+ '"draggable="true"><div>' + fileName + '<img src=" images/fileImage.png "  width="100%"></div></div>');
+			appendHTML('<div class="column" id="base' + i + '" draggable="true"><div>' + fileName + '<img src=" images/fileImage.png "  width="100%"></div></div>');
 			objectUrls.push(objectUrl);
 		} else {
 			var objectUrl = URL.createObjectURL(fileList[i]);
 			var fileName = fileList[i].name;
-			appendHTML('<div class="column" draggable="true"><div>' + fileName + '<img src="' + objectUrl + '" width="100%"></div></div>');
+			appendHTML('<div class="column" id="fileBody' + i+ '"draggable="true"><div>' + fileName + '<img src="' + objectUrl + '" width="100%"></div></div>');
+			appendHTML('<div class="column" id="base'+ i + '"  draggable="true"><div>' + fileName + '<img src="' + objectUrl + '" width="100%"></div></div>');
 			objectUrls.push(objectUrl);
 		}
+
+		var id1 = "fileBody" + i ;
+		var id2 = "base" + i ;
+		var body = document.getElementById(id1);
+		var base = document.getElementById(id2);
+		body.style.zIndex = "1";
+		base.style.zIndex = "2";
+		base.style.opacity = "0";
 	}
 }
 
