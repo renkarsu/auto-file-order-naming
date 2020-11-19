@@ -14,16 +14,19 @@
 
     </header>
     <nav class="nav">
-      <a href="#">menu01</a>
-      <a href="#">menu02</a>
+      <a href="https://github.com/renkarsu">管理人Aのgithub</a>
+      <a href="https://github.com/syuta-tm">管理人Bのgithub</a>
       <a href="#">menu03</a>
       <a href="#">menu04</a>
     </nav>
-    <div class="hero">ヒーローエリア</div>
+    <div class="hero">
+      <img src="images/heroarea.png" alt="ヒーローエリア" title="ソースコード" width="1250" height="300">
+    </div>
     <section class="section01">
       <h2>セクション１. 入力フォーム</h2>
       ファイルとファイル名, 何番から番号を付けるか設定してください
-      <form method="post" enctype="multipart/form-data">
+      <!--<form method="post" enctype="multipart/form-data">-->
+      <form>
         <div class="InputAddOn">
           <label>
             <input type="file" name="upfile[]" multiple id="FileStorage">ファイルを選択
@@ -45,14 +48,13 @@
         </div>
         <button type="button" id="move">順番を変更する</button>
       </form>
+      <!--</form>-->
     </section>
     <section class="section02">
       <h2>セクション2. 画像プレビュー</h2>
       <div class="tile" id="layout-tile">
         <div id="layoutCanvas">
           <div>
-            <h3>アイテムのタイトル</h3>
-            <p>アイテムアイテムアイテムアイテム</p>
           </div>
           <div>
 
@@ -79,7 +81,9 @@
       </div>
     </section>
     <aside class="sidebar">
-      サイドバー
+      Contents<br>
+      <a href="https://github.com/renkarsu">管理人Aのgithub</a><br>
+      <a href="https://github.com/syuta-tm">管理人Bのgithub</a>
     </aside>
     <footer class="footer">
       <p style="text-align: center">©Copyright 2020 by denbutu. All rights reversed.</p>

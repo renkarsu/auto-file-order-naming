@@ -44,8 +44,9 @@
           <input type="submit" class="InputAddOn-item" id="submit" accesskey="u" onclick="download()">
         </div>
         <div class="InputAddOn">
-          <input type="reset" class="InputAddOn-item">
+          <input type="reset" class="InputAddOn-item" id="reset">
         </div>
+        <button type="button" id="move">順番を変更する</button>
       </form>
       <!--</form>-->
     </section>
@@ -81,8 +82,8 @@
     </section>
     <aside class="sidebar">
       Contents<br>
-            <a href="https://github.com/renkarsu">管理人Aのgithub</a><br>
-            <a href="https://github.com/syuta-tm">管理人Bのgithub</a>
+      <a href="https://github.com/renkarsu">管理人Aのgithub</a><br>
+      <a href="https://github.com/syuta-tm">管理人Bのgithub</a>
     </aside>
     <footer class="footer">
       <p style="text-align: center">©Copyright 2020 by denbutu. All rights reversed.</p>
@@ -90,6 +91,8 @@
   </div>
   <script src="scripts/Thumbnail.js"></script>
   <script src="scripts/download-naming.js"></script>
+  <script src="scripts/draggToOrderChange.js"></script>
+  <script src="scripts/reset.js"></script>
 </body>
 
 </html>
