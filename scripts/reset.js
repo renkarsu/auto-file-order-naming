@@ -6,5 +6,4 @@ document.getElementById("reset").onclick = function() {
 	for (var i = 0; i < len; i++) {
 		parent.removeChild(children[0]);
 	}
-	console.log(len);
 }

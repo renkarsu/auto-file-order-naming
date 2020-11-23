@@ -15,16 +15,26 @@ function download() {
     }
 
     var LastNumber = parseInt(number, 10) + parseInt(l, 10);
-    //var str1 = String(LastNumber).length - 2;
-
     var str1 = String(LastNumber).length;
 
+    var target = [];
+    target = document.getElementsByClassName("target");
 
     for (var i = 0; l > i; i++) {
 
-        var img = URL.createObjectURL(fileList[i]);
+        //ファイルをダウンロードする順番の決定
+        var id = target[i].id;
+        var set
+        var idType = id.split("_");
+        var leng = idType.length;
+        if (leng ===0){
+            set = "";
+        }
+        set = idType[leng - 1];
+
+        var img = URL.createObjectURL(fileList[set]);
         var currentNumber = parseInt(number, 10) + parseInt(i, 10);
-        var fileName = fileList[i].name;
+        var fileName = fileList[set].name;
 
         var str2 = String(currentNumber).length;
         var str = str1 - str2;
@@ -53,5 +63,4 @@ function download() {
         document.body.removeChild(element);
 
     }
-
 }
